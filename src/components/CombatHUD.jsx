@@ -1,0 +1,17 @@
+import {useEffect,useState} from 'react';
+import {Volume2,VolumeX,Sparkles,Settings2,X} from 'lucide-react';
+const KEY='fightlab-hud-preferences';
+const read=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch{return {}}};
+export default function CombatHUD({page}){
+ const [settings,setSettings]=useState(()=>({effects:true,sounds:false,...read()}));
+ const [open,setOpen]=useState(false);
+ const [notice,setNotice]=useState(null);
+ useEffect(()=>{try{localStorage.setItem(KEY,JSON.stringify(settings))}catch{};document.documentElement.classList.toggle('fl-no-effects',!settings.effects);return ()=>document.documentElement.classList.remove('fl-no-effects')},[settings]);
+ useEffect(()=>{const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce||!settings.effects)return;const nodes=document.querySelectorAll('.route-page section, .fl-profile-v2 section, .fl-training-page article, .fl-v2-fighter-plans article');const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('fl-revealed');obs.unobserve(e.target)}}),{threshold:.06});nodes.forEach(n=>{n.classList.add('fl-reveal-ready');obs.observe(n)});return ()=>obs.disconnect()},[page,settings.effects]);
+ useEffect(()=>{const handle=e=>{const detail=e.detail||{};setNotice({title:detail.title||'ACHIEVEMENT UNLOCKED',message:detail.message||'New milestone reached!',xp:detail.xp});};window.addEventListener('fightlab:achievement',handle);return ()=>window.removeEventListener('fightlab:achievement',handle)},[]);
+ useEffect(()=>{if(!notice)return;const t=setTimeout(()=>setNotice(null),5000);return ()=>clearTimeout(t)},[notice]);
+ useEffect(()=>{if(!settings.sounds)return;let ctx;const click=e=>{if(!e.target.closest('button'))return;try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='triangle';osc.frequency.setValueAtTime(480,ctx.currentTime);osc.frequency.exponentialRampToValueAtTime(310,ctx.currentTime+.045);gain.gain.setValueAtTime(.018,ctx.currentTime);gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.06);osc.connect(gain);gain.connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.06)}catch{}};document.addEventListener('click',click);return ()=>{document.removeEventListener('click',click);ctx?.close()}},[settings.sounds]);
+ return <><div className="fl-hud-corner fl-hud-corner-left" aria-hidden="true"/><div className="fl-hud-corner fl-hud-corner-right" aria-hidden="true"/>
+ <div className="fl-hud-tools"><button type="button" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-label="Visual and sound settings"><Settings2 size={18}/></button>{open&&<div className="fl-hud-settings"><strong>INTERFACE SETTINGS</strong><label><input type="checkbox" checked={settings.effects} onChange={e=>setSettings(s=>({...s,effects:e.target.checked}))}/> Motion effects</label><label><input type="checkbox" checked={settings.sounds} onChange={e=>setSettings(s=>({...s,sounds:e.target.checked}))}/> Menu click sounds</label><small>Respects your device's reduced-motion setting.</small></div>}</div>
+ {notice&&<div className="fl-hud-toast" role="status"><Sparkles size={25}/><div><strong>{notice.title}</strong><p>{notice.message}{notice.xp?` · +${notice.xp} XP`:''}</p></div><button onClick={()=>setNotice(null)} aria-label="Dismiss"><X size={16}/></button></div>}</>;
+}

@@ -1,0 +1,65 @@
+.fl-advanced{color:#f4f2f3}.fl-advanced-hero{background:linear-gradient(115deg,#141316,#31151b);border-left:5px solid #e82f47;padding:40px;margin-bottom:22px}.fl-advanced-hero span{color:#ff6678;letter-spacing:3px;font-size:.75rem;font-weight:900}.fl-advanced-hero h1{font-size:clamp(2rem,5vw,4.2rem);margin:14px 0}.fl-advanced-hero em{font-style:normal;color:#fa4158}.fl-advanced-hero p,.fl-advanced article p{color:#c3bfc3}.fl-advanced-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.fl-advanced-tabs button,.fl-advanced button:not(.btn-primary){background:#252126;color:#eee;border:1px solid #5d3d45;padding:11px 14px;cursor:pointer;font-weight:800}.fl-advanced-tabs button.active,.fl-advanced button:hover{background:#b82237;color:white}.fl-advanced article{background:linear-gradient(130deg,#211d21,#151416);border:1px solid #51343d;padding:24px;margin-bottom:20px;min-width:0}.fl-advanced h2{display:flex;align-items:center;gap:10px;color:white;font-size:1.35rem}.fl-advanced h2 svg{color:#f04459}.fl-advanced-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.fl-advanced-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}.fl-advanced label{display:grid;gap:8px;color:#ff99a5;font-size:.78rem;font-weight:800;letter-spacing:1px;margin:12px 0}.fl-advanced input,.fl-advanced select,.fl-advanced textarea{background:#121113;color:white;border:1px solid #64444d;padding:12px;min-width:0;width:100%;font:inherit}.fl-advanced button:disabled{opacity:.4;cursor:not-allowed}.fl-advanced-row{display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid #4c353b;padding:14px 0;flex-wrap:wrap}.fl-advanced-row>div{display:grid;gap:5px}.fl-advanced-row small{color:#bfb7bd;max-width:470px;white-space:pre-wrap}.fl-advanced-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}.fl-advanced-metrics>div{background:#2c2026;border-top:3px solid #e83b52;padding:16px;display:grid;gap:8px}.fl-advanced-metrics strong{font-size:1.8rem}.fl-advanced-metrics small{color:#eaa0a9}.fl-skill-tree{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.fl-skill-tree>div{display:grid;gap:8px;justify-items:center;text-align:center;background:#302028;border:1px solid #c7354d;padding:18px;color:#fff}.fl-skill-tree .locked{opacity:.35;filter:grayscale(1)}.fl-skill-tree small{font-size:.65rem}.fl-matchup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.fl-matchup-grid>div{padding:18px;display:grid;gap:10px;border:1px solid #6c3c46;background:#382126}.fl-matchup-grid .good{background:#22342e}.fl-matchup-grid .even{background:#343027}.fl-matchup-grid b{font-size:2rem}.fl-input-display{margin:18px 0;min-height:140px;display:grid;gap:12px;place-items:center;border:2px dashed #d13c50;padding:20px;cursor:text}.fl-input-display strong{font-size:1.6rem;letter-spacing:5px;overflow-wrap:anywhere}.fl-advanced-message{padding:12px;border:1px solid #c74356;color:#ffd6db}.fl-rank-badge{display:inline-flex;align-items:center;gap:9px;color:#fff}.fl-rank-badge img{width:55px;height:55px;object-fit:contain}.fl-advanced video{width:100%;max-height:360px}.fl-advanced a{color:#ff8b99}@media(max-width:850px){.fl-advanced-grid,.fl-advanced-fields{grid-template-columns:1fr}.fl-advanced-metrics,.fl-skill-tree{grid-template-columns:repeat(2,minmax(0,1fr))}.fl-advanced-hero{padding:22px}}
+
+/* FightLab icon navigation — scoped to progression/development only */
+.fl-progression .fl-prog-tabs,
+.fl-advanced .fl-advanced-tabs {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
+  gap:10px;
+  margin:0 0 26px;
+}
+.fl-progression .fl-prog-tabs button,
+.fl-advanced .fl-advanced-tabs button {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:11px;
+  min-height:94px;
+  padding:16px 17px;
+  border:1px solid rgba(178,182,190,.22);
+  border-bottom:2px solid rgba(178,182,190,.25);
+  border-radius:9px;
+  background:linear-gradient(135deg,rgba(49,49,54,.9),rgba(15,15,18,.94));
+  color:#e5e5e8;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+  text-align:left;
+  font-size:.76rem;
+  font-weight:850;
+  line-height:1.25;
+  letter-spacing:.075em;
+  cursor:pointer;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
+}
+.fl-progression .fl-prog-tabs button svg,
+.fl-advanced .fl-advanced-tabs button svg {color:#ff5366;flex-shrink:0;transition:transform .18s ease}
+.fl-progression .fl-prog-tabs button:hover,
+.fl-advanced .fl-advanced-tabs button:hover {
+  transform:translateY(-3px);
+  border-color:rgba(255,74,96,.65);
+  background:linear-gradient(135deg,#402029,#1a171b);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+.fl-progression .fl-prog-tabs button:hover svg,
+.fl-advanced .fl-advanced-tabs button:hover svg {transform:scale(1.12)}
+.fl-progression .fl-prog-tabs button.active,
+.fl-advanced .fl-advanced-tabs button.active {
+  border-color:#f34458;
+  border-bottom-color:#ff5366;
+  background:linear-gradient(135deg,#842233,#29191f);
+  color:#fff;
+  box-shadow:0 0 0 1px rgba(243,68,88,.14),inset 0 1px 0 rgba(255,255,255,.09);
+}
+.fl-progression .fl-prog-tabs button.active svg,
+.fl-advanced .fl-advanced-tabs button.active svg {color:#fff}
+.fl-progression .fl-prog-tabs button:focus-visible,
+.fl-advanced .fl-advanced-tabs button:focus-visible {outline:2px solid #ff687b;outline-offset:3px}
+@media(max-width:620px){
+  .fl-progression .fl-prog-tabs,.fl-advanced .fl-advanced-tabs {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .fl-progression .fl-prog-tabs button,.fl-advanced .fl-advanced-tabs button {min-height:83px;padding:13px;font-size:.69rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .fl-progression .fl-prog-tabs button,.fl-advanced .fl-advanced-tabs button,
+  .fl-progression .fl-prog-tabs button svg,.fl-advanced .fl-advanced-tabs button svg {transition:none}
+}

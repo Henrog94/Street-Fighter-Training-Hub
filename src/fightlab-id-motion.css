@@ -1,0 +1,27 @@
+
+/* FightLab Fighter ID — graphite/glass with disciplined red highlights */
+.fl-profile-v2 .fl-fighter-id-card{position:relative;isolation:isolate;min-height:340px;padding:54px 46px 48px!important;border:1px solid #66515a!important;border-left:4px solid #ed5261!important;background:linear-gradient(112deg,rgba(17,18,23,.96) 5%,rgba(35,34,42,.91) 60%,rgba(19,18,24,.96)),repeating-linear-gradient(120deg,transparent 0 31px,#ffffff08 32px 33px)!important;box-shadow:inset 0 0 0 5px #0c0c10,0 18px 40px #0008;clip-path:polygon(0 0,calc(100% - 25px) 0,100% 25px,100% 100%,25px 100%,0 calc(100% - 25px))}
+.fl-fighter-id-card:before{content:"";position:absolute;inset:12px;pointer-events:none;border:1px solid #ffffff1a;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));z-index:0}
+.fl-fighter-id-topline,.fl-fighter-id-bottomline{position:absolute;left:46px;right:46px;display:flex;justify-content:space-between;gap:12px;font-size:9px;letter-spacing:.18em;font-weight:800;color:#aaa8b0;z-index:2}
+.fl-fighter-id-topline{top:22px}.fl-fighter-id-bottomline{bottom:18px;color:#c07a84}
+.fl-fighter-id-card .fl-profile-hero-copy{position:relative;z-index:2}
+.fl-fighter-id-card .fl-player-rank{background:#343039;border:1px solid #8c4652;color:#f3b4bd;box-shadow:inset 3px 0 #ef5362}
+.fl-fighter-id-card .fl-fighter-id-identity{display:inline-flex;min-width:min(360px,100%);padding:12px 20px 12px 12px;border:1px solid #57505b;background:linear-gradient(100deg,#26242cdb,#17171c9e);backdrop-filter:blur(8px);box-shadow:0 8px 20px #0006}
+.fl-fighter-id-identity img,.fl-fighter-id-identity .fl-profile-initial{width:66px;height:66px;border-radius:4px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);border:2px solid #a9505c}
+.fl-fighter-id-identity strong{font-size:28px;letter-spacing:.08em}
+.fl-fighter-id-insignia{color:#b7aab2;opacity:.72;filter:drop-shadow(0 0 18px #a0445033)}
+.fl-fighter-id-code{font-size:10px;letter-spacing:.15em;color:#f17b88}
+.fl-profile-v2 .fl-profile-stats>div,.fl-profile-v2 .fl-v2-panel,.fl-profile-v2 .fl-v2-fighter-plans article{position:relative;border:1px solid #49424d;background-color:#19191f;box-shadow:inset 0 1px #ffffff09,0 10px 24px #0004;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.fl-profile-v2 .fl-profile-stats>div:before,.fl-profile-v2 .fl-v2-panel:before{content:"";position:absolute;top:0;left:0;width:48px;height:2px;background:#e25a67;pointer-events:none}
+.fl-profile-v2 .fl-v2-panel:hover{border-color:#8d5862;box-shadow:inset 0 1px #ffffff12,0 15px 32px #0008}
+.fl-profile-v2 .fl-v2-quick{background:linear-gradient(130deg,#2b242d,#19191f)}
+.fl-profile-v2 .fl-v2-fighter-plans article{transition:transform .22s,border-color .22s}
+.fl-profile-v2 .fl-v2-fighter-plans article:hover{transform:translateY(-3px);border-color:#bb6570}
+.fl-prog-tab-stage,.fl-dev-tab-stage{animation:fl-shared-tab-enter .34s cubic-bezier(.2,.75,.2,1) both;transform-origin:top center}
+@keyframes fl-shared-tab-enter{0%{opacity:0;transform:translateY(20px) scale(.992);filter:blur(3px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.fighter-chart-scroll{background:linear-gradient(135deg,#17171d,#101015);border:1px solid #4e424b;box-shadow:inset 0 0 24px #0007}
+.fighter-chart-scroll svg circle{filter:drop-shadow(0 0 3px #ff7777aa)}
+.fighter-chart-controls button{transition:background-color .2s,border-color .2s,transform .2s}
+.fighter-chart-controls button:hover{transform:translateY(-2px)}
+@media(max-width:680px){.fl-profile-v2 .fl-fighter-id-card{padding:55px 20px 48px!important}.fl-fighter-id-topline,.fl-fighter-id-bottomline{left:20px;right:20px;font-size:7px}.fl-fighter-id-insignia{display:none}}
+@media(prefers-reduced-motion:reduce){.fl-prog-tab-stage,.fl-dev-tab-stage{animation:none!important}}

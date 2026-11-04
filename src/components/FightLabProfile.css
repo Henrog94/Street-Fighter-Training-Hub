@@ -1,0 +1,38 @@
+/* FightLab player customization — red / charcoal / transparent */
+.fightlab-profile,
+.fl-profile-v2 .fightlab-profile {
+  --fl-avatar-red: #f0444f;
+  width: 100%; max-width: none; margin: 0; padding: 0;
+  background: transparent !important; border: 0 !important;
+  border-radius: 0 !important; box-shadow: none !important;
+  color: #f5f3f4 !important;
+}
+.fightlab-profile-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;font-size:11px;font-weight:900;letter-spacing:1.6px;color:#f2f0f1}
+.fightlab-profile-active {font-size:10px;font-weight:900;letter-spacing:1.2px;color:#f18a91 !important}
+.fightlab-profile-details {display:flex;align-items:center;gap:18px;margin-bottom:21px;min-width:0}
+.fightlab-profile-avatar,
+.fl-profile-v2 .fightlab-profile-avatar {width:86px;height:86px;flex-shrink:0;object-fit:cover;border-radius:8px !important;border:2px solid #e34c56 !important;background:#262127 !important;box-shadow:0 0 0 4px rgba(240,68,79,.09)}
+.fightlab-profile-avatar.fallback {display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:900;color:#fff}
+.fightlab-profile-identity {min-width:0}
+.fightlab-profile-identity h2 {margin:0 0 6px;font-family:'Barlow Condensed',sans-serif;font-size:clamp(23px,2.5vw,31px);font-weight:900;color:#fff;overflow-wrap:anywhere}
+.fightlab-profile-identity p {margin:0 0 9px;font-size:12px;color:#b9b3bb;overflow-wrap:anywhere}
+.fightlab-profile-identity small {font-size:9px;font-weight:900;letter-spacing:1px;color:#ef8c94 !important}
+.fightlab-profile-editbar {border-top:1px solid #3e3239;padding-top:17px}
+.fightlab-profile-edit-toggle,
+.fl-profile-v2 .fightlab-profile .fightlab-profile-edit-toggle {width:100%;display:flex;align-items:center;justify-content:space-between;gap:9px;padding:12px 14px;background:rgba(80,35,43,.3) !important;border:1px solid #78414a !important;color:#f8e9ec !important;font-size:10px;font-weight:900;letter-spacing:1.1px;cursor:pointer;transition:background .2s,border-color .2s}
+.fightlab-profile-edit-toggle:hover {background:rgba(150,42,56,.35) !important;border-color:#e65460 !important}
+.fightlab-profile-edit-toggle:focus-visible {outline:2px solid #ff707b;outline-offset:3px}
+.fightlab-profile-upload {margin-top:13px;padding:16px;background:rgba(13,13,16,.62);border:1px solid #46343c}
+.fightlab-profile-upload label {display:block;margin-bottom:10px;font-size:10px;font-weight:900;letter-spacing:1px;color:#eee}
+.fightlab-profile-upload input[type=file] {display:block;width:100%;max-width:100%;padding:9px;background:#111115 !important;border:1px solid #5c4048 !important;color:#d6cfd4 !important;font-size:11px}
+.fightlab-profile-upload input[type=file]::file-selector-button {background:#30252a;color:#fff;border:1px solid #80515a;padding:7px 10px;margin-right:10px;cursor:pointer}
+.fightlab-profile-hint,.fightlab-selected-file {font-size:10px;color:#aba1a8;margin:9px 0}
+.fightlab-profile-actions {display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
+.fightlab-profile-actions button,
+.fl-profile-v2 .fightlab-profile-actions button {padding:10px 13px;background:#b52d39 !important;border:1px solid #e14a55 !important;color:white !important;font-size:10px;font-weight:900;letter-spacing:.6px;cursor:pointer}
+.fightlab-profile-actions button.remove,
+.fl-profile-v2 .fightlab-profile-actions button.remove {background:#292126 !important;border-color:#6a424b !important;color:#ffabb1 !important}
+.fightlab-profile-actions button:disabled {opacity:.45;cursor:not-allowed}
+.fightlab-profile-success {margin-top:12px;color:#f2b6bb;font-size:11px}
+.fightlab-profile-error {margin-top:12px;color:#ff929d;font-size:11px}
+@media(max-width:560px){.fightlab-profile-details{gap:12px}.fightlab-profile-avatar{width:68px;height:68px}.fightlab-profile-identity h2{font-size:24px}}

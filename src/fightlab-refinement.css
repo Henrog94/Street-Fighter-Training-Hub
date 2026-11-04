@@ -1,0 +1,81 @@
+/* FightLab unified training + player profile, loaded after previous styles */
+.fl-training-page,.fl-profile-v2{--fl-red:#ff3b45;--fl-bg:#101014;--fl-panel:#19191f;--fl-line:#35313a;--fl-muted:#a9a5b1;max-width:1450px;margin:auto;color:#f5f4f6}.fl-training-page button,.fl-profile-v2 button{cursor:pointer}.fl-training-page h2,.fl-profile-v2 h1,.fl-profile-v2 h2,.fl-profile-v2 h3{font-family:'Barlow Condensed',sans-serif}.fl-training-overview{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:22px}.fl-training-overview>div{background:linear-gradient(130deg,#201b21,#17161b);border:1px solid #40313a;padding:17px 22px;display:flex;align-items:center;gap:13px}.fl-training-overview svg{color:var(--fl-red)}.fl-training-overview strong{font:900 30px 'Barlow Condensed',sans-serif}.fl-training-overview span{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--fl-muted)}.fl-training-workspace{display:grid;grid-template-columns:minmax(290px,.8fr) minmax(0,1.3fr);gap:18px;align-items:start}.fl-training-side{background:linear-gradient(155deg,rgba(38,29,35,.96),rgba(18,18,22,.98));border:1px solid #48323b;padding:24px}.fl-panel-top,.fl-v2-kicker{font-size:9px;letter-spacing:1.8px;font-weight:900;color:#ff8188}.fl-panel-top{display:flex;justify-content:space-between;border-bottom:1px solid #3b3138;padding-bottom:17px}.fl-month-head{display:flex;align-items:center;justify-content:space-between;margin:24px 0 16px}.fl-month-head h3{margin:0;font-size:23px}.fl-month-head button{background:#242027;border:1px solid #49343d;width:34px;height:34px;display:grid;place-items:center}.fl-month-head button:hover{border-color:var(--fl-red)}.fl-month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.fl-month-grid .fl-weekday{text-align:center;font-size:9px;font-weight:900;color:#8e8a94;padding:9px 0}.fl-month-grid button{aspect-ratio:1;position:relative;background:#1b1a20;border:1px solid #35303a;color:#eee;font-size:12px}.fl-month-grid button:hover{border-color:#ff5c65}.fl-month-grid button.selected{background:#b52d39;border-color:#ff656e;color:white}.fl-month-grid button.has-plans:after{content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:#ff656e}.fl-month-grid button.selected.has-plans:after{background:white}.fl-calendar-hint{font-size:11px;line-height:1.7;color:#aaa4af;margin:20px 0}.fl-training-tip{display:flex;gap:11px;border-left:2px solid var(--fl-red);padding:15px;background:#221b20}.fl-training-tip svg{flex-shrink:0;color:#ff6972}.fl-training-tip p{font-size:11px;line-height:1.7;color:#c4bbc3;margin:0}.fl-training-tip strong{color:white}.fl-session-form{max-width:none;min-width:0;border-color:#47343d;background:linear-gradient(150deg,#1c1b21,#151419)}.fl-session-form label{min-width:0}.fl-session-form small{font-size:9px;color:#89848e}.fl-field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.fl-field-three{grid-template-columns:1.4fr 1fr 1fr}.fl-session-form input,.fl-session-form select,.fl-session-form textarea{min-width:0;width:100%;background:#101014!important;color:#f7f4f6!important;border:1px solid #42343c!important;border-radius:0!important}.fl-session-form input:focus,.fl-session-form textarea:focus,.fl-session-form select:focus{border-color:var(--fl-red)!important}.fl-feedback{margin:0;padding:12px;border-left:2px solid #5fc48c;background:#173021;color:#a4efbd;font-size:11px}.fl-feedback.is-error{border-color:#ff3b45;background:#351b22;color:#ffb2b6}.fl-sessions-section{margin-top:26px}.fl-sessions-title{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:17px}.fl-sessions-title h2{font-size:32px;margin:8px 0 0}.fl-sessions-title h2 span{color:var(--fl-red)}.fl-empty-training{padding:30px;border:1px dashed #4b3a43;color:#bcb6bf;background:#18171c;font-size:12px;display:flex;gap:18px;align-items:center}.fl-session-list{display:grid;gap:12px}.fl-session-item{background:linear-gradient(115deg,#211b22,#17171c);border:1px solid #45323a;border-left:3px solid var(--fl-red);padding:22px;display:flex;justify-content:space-between;gap:20px}.fl-session-item-main{flex:1;min-width:0}.fl-session-item h3{font-size:25px;margin:10px 0 5px}.fl-session-item h3 span{color:#b9b0bb;font-weight:500}.fl-session-item p{font-size:12px;color:#ccc5cf;margin:0 0 8px}.fl-session-item .fl-session-notes{color:#a8a0ac}.fl-session-item ul{font-size:11px;color:#c6c0c9;line-height:1.8}.fl-session-meta{display:flex;align-items:center;gap:6px;color:#ff8a91;font-size:10px;font-weight:800}.fl-status{display:inline-block;text-transform:uppercase;font-size:9px;letter-spacing:1px;font-weight:900;padding:6px 9px;background:#29252c;border:1px solid #51414a;color:#d0c9d2}.fl-status-completed{background:#153123;border-color:#2f7550;color:#9fe5ba}.fl-status-scheduled{background:#322028;border-color:#a03e4c;color:#ff969d}.fl-status-cancelled{background:#29272c;border-color:#57515b;color:#a9a3ae}.fl-session-controls{display:flex;align-content:flex-start;justify-content:flex-end;flex-wrap:wrap;gap:7px;max-width:370px}.fl-session-controls button{display:flex;align-items:center;gap:5px;padding:9px 11px;border:1px solid #54414b;background:#292128;font-size:9px;font-weight:900;letter-spacing:.5px}.fl-session-controls button:hover{border-color:#ff6872;background:#3b232b}.fl-session-controls .fl-delete{border-color:#74353d;color:#ff969d}.fl-session-controls button:disabled{opacity:.4;cursor:wait}
+/* Professional player dashboard */
+.fl-profile-v2 .fl-profile-hero{position:relative;overflow:hidden;min-height:310px;background:linear-gradient(100deg,#17151bf2 10%,#21161dd9 60%,#421c27 100%);border:1px solid #60313b;border-left:4px solid var(--fl-red);padding:35px 42px;display:flex;justify-content:space-between;align-items:center}.fl-profile-hero:after{content:'';position:absolute;right:-65px;top:-150px;width:400px;height:400px;border:1px solid #ff3b4530;border-radius:50%;box-shadow:0 0 0 40px #ff3b4508,0 0 0 90px #ff3b4507;pointer-events:none}.fl-profile-hero-copy{z-index:1}.fl-player-rank{display:inline-flex;gap:7px;align-items:center;background:#ff3b4519;border:1px solid #ff3b4540;color:#ff9a9f;font-size:9px;font-weight:900;letter-spacing:1.3px;padding:7px 10px;margin-top:22px}.fl-profile-hero h1{font-size:clamp(45px,6vw,77px);line-height:.95;margin:16px 0}.fl-profile-hero h1 span{color:var(--fl-red)}.fl-profile-hero-copy>p{color:#c4bbc5;font-size:12px;line-height:1.8}.fl-player-identity{display:flex;align-items:center;gap:13px;margin-top:20px}.fl-player-identity img,.fl-profile-initial{width:55px;height:55px;object-fit:cover;border-radius:50%;border:2px solid #ff5662}.fl-profile-initial{display:grid;place-items:center;background:#702d39;font:900 25px 'Barlow Condensed',sans-serif}.fl-player-identity strong{display:block;font:900 23px 'Barlow Condensed',sans-serif;letter-spacing:.5px}.fl-player-identity small{display:block;color:#a99fa9;font-size:10px;margin-top:4px}.fl-profile-hero-mark{display:flex;align-items:center;flex-direction:column;gap:15px;color:#ff535f;opacity:.55;z-index:1}.fl-profile-hero-mark span{font-size:9px;letter-spacing:2px;font-weight:900}.fl-profile-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0 23px}.fl-profile-stats>div{min-width:0;background:linear-gradient(140deg,#201c23,#17161b);border:1px solid #41323b;padding:20px;display:flex;flex-direction:column;gap:8px}.fl-profile-stats svg{width:20px;height:20px;color:#ff6670}.fl-profile-stats span{color:#aaa4ae;font-size:9px;font-weight:900;letter-spacing:1px}.fl-profile-stats strong{font:900 43px 'Barlow Condensed',sans-serif;line-height:1;color:white}.fl-profile-stats em{font:800 15px 'Barlow Condensed',sans-serif;color:#ff6a73;font-style:normal}.fl-profile-stats small{font-size:10px;color:#8f8995}.fl-profile-columns{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.85fr);gap:18px}.fl-profile-main,.fl-profile-side{display:flex;flex-direction:column;gap:18px;min-width:0}.fl-v2-panel{background:linear-gradient(145deg,#1c1b21,#151419);border:1px solid #40313a;padding:25px}.fl-v2-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;border-bottom:1px solid #393039;padding-bottom:16px}.fl-v2-heading h2{font-size:25px;margin:8px 0 0;display:flex;align-items:center;gap:9px}.fl-v2-heading h2 svg{color:var(--fl-red)}.fl-v2-heading>span{font-size:9px;color:#a8a0aa;font-weight:900;letter-spacing:1px}.fl-v2-panel>p{font-size:11px;line-height:1.8;color:#aaa3ae}.fl-v2-favorites{display:flex;flex-wrap:wrap;gap:8px}.fl-v2-favorites button{display:flex;align-items:center;gap:6px;border:1px solid #493a44;background:#242027;padding:10px 12px;font-size:10px;font-weight:800}.fl-v2-favorites button:hover,.fl-v2-favorites button.active{border-color:#ff5c66;background:#58242e;color:#fff}.fl-v2-favorites button.active svg{color:#ff717a}.fl-v2-link{border:0;background:none;color:#ff7780;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:900;letter-spacing:.6px}.fl-v2-empty{padding:25px;background:#17161b;border:1px dashed #483943;font-size:12px;color:#a9a1ab}.fl-v2-fighter-plans article{border:1px solid #39313a;margin-top:10px;background:#17161b}.fl-v2-fighter-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:15px;border-bottom:1px solid #39313a}.fl-v2-fighter-heading>div{display:flex;align-items:center;gap:9px}.fl-v2-fighter-heading svg{color:#ff747d}.fl-v2-fighter-heading strong{font:900 19px 'Barlow Condensed',sans-serif}.fl-v2-fighter-heading span{font-size:9px;color:#aaa3ad}.fl-v2-fighter-heading button{display:flex;align-items:center;gap:5px;background:#45242d;border:1px solid #8a3a46;font-size:9px;font-weight:900;padding:8px}.fl-v2-fighter-plans article>p{padding:15px;color:#a7a0a9;font-size:11px}.fl-v2-plan{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-bottom:1px solid #2e2a32}.fl-v2-plan>div{flex:1;min-width:0}.fl-v2-plan strong{display:block;font-size:11px}.fl-v2-plan small{display:block;color:#9e96a1;font-size:9px;margin-top:4px}.fl-v2-avatar-panel .fightlab-profile{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}.fl-v2-avatar-panel .fightlab-profile *{border-radius:2px!important}.fl-v2-avatar-panel .fightlab-profile button{background:#b52d39!important;border:1px solid #e34a56!important;color:white!important}.fl-v2-avatar-panel .fightlab-profile input{background:#101014!important;border:1px solid #483841!important;color:white!important}.fl-v2-quick{background:linear-gradient(135deg,#3c1e29,#1b181e);border-color:#70333e}.fl-v2-quick>svg{color:#ff747e}.fl-v2-quick h3{font-size:30px;line-height:1;margin:16px 0 10px}.fl-v2-quick p{font-size:12px;color:#c1b7c1;line-height:1.7}.fl-v2-history{margin-top:18px}.fl-v2-history .fl-v2-heading select{background:#151319;border:1px solid #493943;color:white;padding:10px;font-size:10px}.fl-v2-history-row{display:flex;align-items:center;gap:16px;padding:15px 5px;border-bottom:1px solid #37303a}.fl-v2-history-icon{width:38px;height:38px;background:#ff3b4518;color:#ff6e78;display:grid;place-items:center;flex-shrink:0}.fl-v2-history-name{flex:1;min-width:0}.fl-v2-history-name strong{display:block;font-size:12px}.fl-v2-history-name strong span{color:#9c939e;font-weight:500}.fl-v2-history-name small{display:block;font-size:10px;color:#aaa1ac;margin-top:5px}.fl-v2-history-date{min-width:130px;text-align:right;font-size:11px;font-weight:800}.fl-v2-history-date small{display:block;color:#9c929d;font-size:9px;margin-top:5px}.fl-v2-history-action{margin-top:20px}
+/* Remove any purple from legacy avatar widget, even if its own CSS loads after base CSS. */
+.fl-profile-v2 .fightlab-profile,.fl-profile-v2 .fightlab-profile-card,.fl-profile-v2 .fightlab-profile-avatar,.fl-profile-v2 .fightlab-profile-upload{--accent:#ff3b45;--primary:#ff3b45;color:#f5f4f6!important}.fl-profile-v2 .fightlab-profile{background:#19191f!important;border-color:#4c303a!important;box-shadow:none!important}.fl-profile-v2 .fightlab-profile button{background:#b92f3b!important;border-color:#e64a56!important;color:#fff!important}.fl-profile-v2 .fightlab-profile input{background:#101014!important;border-color:#51343e!important;color:#fff!important}
+@media(max-width:1000px){.fl-training-workspace,.fl-profile-columns{grid-template-columns:1fr}.fl-profile-side{display:grid;grid-template-columns:1fr 1fr}.fl-session-item{flex-direction:column}.fl-session-controls{max-width:none;justify-content:flex-start}}@media(max-width:680px){.fl-training-overview,.fl-profile-stats{grid-template-columns:repeat(2,1fr)}.fl-profile-hero{padding:25px!important}.fl-profile-hero-mark{display:none}.fl-profile-side{grid-template-columns:1fr}.fl-field-row,.fl-field-three{grid-template-columns:1fr}.fl-sessions-title{align-items:flex-start;flex-direction:column}.fl-v2-history-row{flex-wrap:wrap}.fl-v2-history-date{min-width:0}.fl-v2-plan{flex-wrap:wrap}.fl-profile-stats strong{font-size:34px}}
+
+/* Fighter Development: translucent fighter card artwork */
+.fl-profile-v2 .fl-v2-fighter-plans article.fl-fighter-art-card{
+  background-color:#17161b; background-position:right center; background-size:cover; background-repeat:no-repeat;
+  border:1px solid rgba(255,75,82,.25); position:relative; overflow:hidden;
+  box-shadow:inset 3px 0 0 rgba(255,59,69,.55); transition:border-color .2s, transform .2s;
+}
+.fl-profile-v2 .fl-v2-fighter-plans article.fl-fighter-art-card:hover{border-color:rgba(255,65,76,.72);transform:translateY(-2px)}
+.fl-profile-v2 .fl-fighter-art-card .fl-v2-fighter-heading,
+.fl-profile-v2 .fl-fighter-art-card .fl-v2-plan,
+.fl-profile-v2 .fl-fighter-art-card > p{position:relative;z-index:1}
+.fl-profile-v2 .fl-fighter-art-card .fl-v2-fighter-heading{background:rgba(9,9,12,.32)}
+.fl-profile-v2 .fl-fighter-art-card .fl-v2-plan{background:rgba(10,10,13,.43);backdrop-filter:blur(2px)}
+
+/* =========================================
+   FIGHTER DEVELOPMENT CARD BACKGROUNDS
+   ALIGN CHARACTER IMAGES TO TOP
+========================================= */
+
+.fighter-development-card {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fighter-development-card::before {
+  background-position: center top;
+}
+
+/* If character artwork uses a separate image */
+.fighter-development-card img.fighter-background {
+  object-position: center top;
+}
+
+/* Fighter Development: portrait-focused framing.
+   The first background is the readability gradient; the second is fighter art. */
+.fl-profile-v2 .fl-v2-fighter-plans article.fl-fighter-art-card {
+  background-position: center center, right top !important;
+  background-size: cover, auto 360px !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-color: #17161b;
+}
+@media (max-width: 680px) {
+  .fl-profile-v2 .fl-v2-fighter-plans article.fl-fighter-art-card {
+    background-size: cover, auto 290px !important;
+  }
+}
+
+
+/* Training Log: fighter portrait backgrounds matching Fighter Development cards. */
+.fl-training-page .fl-session-list article.fl-session-art-card {
+  background-color: #17161b;
+  background-position: center center, right top;
+  background-size: cover, auto 390px;
+  background-repeat: no-repeat, no-repeat;
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(255,75,82,.30);
+  box-shadow: inset 3px 0 0 rgba(255,59,69,.55);
+}
+.fl-training-page .fl-session-art-card .fl-session-item-main,
+.fl-training-page .fl-session-art-card .fl-session-controls {
+  position: relative;
+  z-index: 1;
+}
+.fl-training-page .fl-session-art-card .fl-session-controls button {
+  background: rgba(31,25,31,.9);
+  backdrop-filter: blur(3px);
+}
+@media (max-width: 680px) {
+  .fl-training-page .fl-session-list article.fl-session-art-card {
+    background-size: cover, auto 320px;
+  }
+}

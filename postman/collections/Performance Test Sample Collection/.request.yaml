@@ -1,0 +1,18 @@
+$kind: http-request
+name: ""
+url: http://localhost:5000/api/auth/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"fightlab@example.com\",\r
+
+    \  \"password\": \"FightLabDemo123!\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWUyYWYyYzYzM2IwOWM1OTBjM2Y4MmYiLCJpYXQiOjE3OTMyNDI3MjIsImV4cCI6MTc5MzI0OTkyMn0.20eEmq4PZBOkP75wduB6ybZXsECdrSI2EyxnZy1mmpc
+order: 1000

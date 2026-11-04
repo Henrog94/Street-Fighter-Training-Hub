@@ -1,0 +1,124 @@
+/* FIGHTLAB CONCEPT IMPLEMENTATION — uses the site's existing data and routes */
+:root{--concept-red:#ff304c;--concept-pink:#ff6c81;--concept-ink:#0b0b11;--concept-edge:#632637;--concept-text:#f6f2f5}
+body{background:#090a0f;color:var(--concept-text)}
+.app-shell{background:radial-gradient(ellipse at 75% 4%,#63142444,transparent 35%),linear-gradient(120deg,#0a0a0f,#15121b 55%,#090a0f);min-height:100vh}
+.fl-concept-topline{background:#08080c;border-bottom:1px solid #3a1d29}
+.fl-concept-navbar{background:linear-gradient(180deg,#161018f5,#0a0a10f7)!important;border-bottom:2px solid #ff304c!important;box-shadow:0 0 22px #ff304c44,0 16px 36px #000a;position:sticky;top:0;z-index:50}
+.fl-concept-navbar:before{content:'';position:absolute;inset:0 0 auto;height:3px;background:repeating-linear-gradient(110deg,transparent 0 24px,#ff304c 25px 38px,transparent 39px 52px);opacity:.48;pointer-events:none}
+.fl-concept-navbar .brand{filter:drop-shadow(0 0 7px #ff304c66)}
+.fl-concept-navbar .nav-item{position:relative;transition:background .2s,transform .2s,color .2s}
+.fl-concept-navbar .nav-item:hover,.fl-concept-navbar .nav-item.active{background:#b6243c30;color:#ff687e;transform:translateY(-2px)}
+.fl-concept-navbar .nav-item.active:after{content:'';position:absolute;bottom:0;left:18%;width:64%;height:2px;background:#ff304c;box-shadow:0 0 12px #ff304c}
+.fl-concept-home{max-width:1700px;margin:auto;padding:16px 22px 50px}
+.fl-concept-hero{position:relative;isolation:isolate;min-height:540px;overflow:hidden;background:radial-gradient(circle at 72% 45%,#8e1a3040,transparent 38%),linear-gradient(105deg,#08080cf2 0%,#111019 58%,#330c1a 100%);border:1px solid #92243a;border-left:5px solid #ff344d;box-shadow:0 0 0 3px #09090d,0 15px 45px #0009}
+.fl-concept-hero:before{content:'';position:absolute;inset:0;background:url('/images/concept/angular-frame.svg') center/100% 100% no-repeat;pointer-events:none;z-index:5;opacity:.8}
+.fl-concept-hero:after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#09090e 1%,#09090ee9 34%,#09090e44 62%,#1b0710bb 100%),repeating-linear-gradient(0deg,transparent 0 6px,#ff344d09 7px 8px);pointer-events:none}
+.fl-concept-hero-art{position:absolute;inset:-12% 8% -20% 40%;z-index:0;background-repeat:no-repeat;background-position:center 16%;background-size:contain;filter:drop-shadow(0 0 50px #e92b4a55) saturate(1.15)}
+.fl-concept-hero-copy{position:relative;z-index:3;padding:72px 5.5%;max-width:760px}
+.fl-concept-kicker{font-weight:800;letter-spacing:.22em;color:#ff7183;font-size:12px;display:flex;align-items:center;gap:10px;text-transform:uppercase}
+.fl-concept-hero h1{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:1000;font-size:clamp(70px,8vw,128px);line-height:.8;letter-spacing:-.025em;margin:27px 0 24px;color:#fff;text-shadow:5px 7px 0 #380b1b,0 0 32px #ff2b4d55;font-style:italic}
+.fl-concept-hero h1 span,.fl-concept-hero h1 em{color:#ff304c;font-style:inherit}
+.fl-concept-hero-copy>p{font-size:16px;line-height:1.7;max-width:480px;color:#d4c8d0}
+.fl-concept-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+.fl-concept-hero-counter{display:flex;gap:20px;align-items:center;color:#d4a4b0;font-size:10px;letter-spacing:.16em}.fl-concept-hero-counter strong{color:#fff;font-size:13px}
+.fl-concept-hero-quote{position:absolute;right:5%;bottom:13%;z-index:3;max-width:230px;text-align:right;color:#f8e3e8;font:italic 800 22px 'Barlow Condensed',sans-serif;text-shadow:0 3px 12px #000}
+.fl-concept-hero-quote small{display:block;font:700 10px sans-serif;color:#ff657c;letter-spacing:.13em;margin-top:10px}
+.fl-concept-module-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:15px}
+.fl-concept-module{background:linear-gradient(140deg,#24111c,#0d0d13 70%);color:#fff;border:1px solid #8b2b40;border-bottom:3px solid #ff304c;min-height:164px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;cursor:pointer;clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,0 100%);transition:transform .2s,box-shadow .2s}
+.fl-concept-module>svg:first-child{color:#ff4b65;filter:drop-shadow(0 0 9px #ff304c66)}.fl-concept-module strong{font:900 23px 'Barlow Condensed',sans-serif;letter-spacing:.06em}.fl-concept-module span{font-size:12px;color:#c2b7bf;max-width:205px}.fl-concept-module .fl-concept-arrow{position:absolute;right:15px;top:14px;color:#ff7183}.fl-concept-module:hover{transform:translateY(-5px);box-shadow:0 0 22px #ff304c66}
+.fl-concept-intel{margin:35px 0 0;padding:25px 32px;background:linear-gradient(100deg,#1e131b,#0d0d12);border-left:4px solid #ff304c;display:flex;align-items:center;justify-content:space-between;gap:20px}.fl-concept-intel h2{font:900 30px 'Barlow Condensed',sans-serif;margin:10px 0}.fl-concept-intel p{max-width:760px;color:#bcb2bc}
+/* Roster selection matches the concept with character portrait emphasis */
+.fl-concept-fighters{background:linear-gradient(180deg,#21111b88,transparent 320px);position:relative}
+.fl-concept-fighters:before{content:'';position:absolute;inset:0 0 auto;height:300px;background:linear-gradient(90deg,#0d0d13bb,#150c1aee),url('/assets/images/ryu.png.png') right 18%/auto 470px no-repeat;pointer-events:none;opacity:.6}
+.fl-concept-fighters>*{position:relative}
+.fl-concept-fighters .fighter-grid{gap:16px}
+.fl-concept-fighters .fighter-card{background:#101016;border:1px solid #84273b;box-shadow:0 6px 22px #0008;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.fl-concept-fighters .fighter-card:hover{transform:translateY(-5px);box-shadow:0 0 22px #e52b4555}
+.fl-concept-fighters .fighter-image-wrap{background:linear-gradient(130deg,#30111e,#101017)}
+.fl-concept-fighters .fighter-image-wrap img{object-position:center top;transition:transform .3s}
+.fl-concept-fighters .fighter-card:hover img{transform:scale(1.06)}
+.fl-concept-fighters .fighter-info{border-top:2px solid #ff304c}
+/* Fighter intelligence modal */
+.fighter-detail-modal.fl-concept-detail{background:linear-gradient(120deg,#120e17,#090b12);border:2px solid #e5334c;box-shadow:0 0 0 7px #0b0b10,0 0 50px #f12a4655;max-width:1150px}
+.fl-concept-detail .modal-fighter-image{background:radial-gradient(circle at center,#9a213b44,transparent 65%)}
+.fl-concept-detail .modal-fighter-image img{object-position:center top;filter:drop-shadow(0 0 30px #e9304840)}
+.fl-concept-detail .modal-content h2{font-size:clamp(45px,5vw,84px);text-shadow:3px 4px 0 #4a1122}
+.fl-concept-detail .modal-facts>div{border:1px solid #682b3c;background:#20131b}
+/* Player identity and progression */
+.fl-concept-profile .fl-profile-hero{background:radial-gradient(circle at 83% 42%,#a3263e44,transparent 33%),linear-gradient(105deg,#131018,#27131e);border:1px solid #8e2b41;border-left:5px solid #ff304c;position:relative;overflow:hidden}
+.fl-concept-profile .fl-profile-hero:after{content:'';position:absolute;inset:0;pointer-events:none;background:url('/images/concept/angular-frame.svg') center/100% 100%;opacity:.22}
+.fl-concept-profile .fl-profile-stats>div{background:linear-gradient(130deg,#21131d,#111117);border:1px solid #65303d;border-bottom:3px solid #d8334c;box-shadow:0 8px 22px #0006}
+.fl-concept-profile .fl-v2-panel{background:linear-gradient(140deg,#1a141c,#101015);border:1px solid #63313d;box-shadow:0 10px 30px #0006}
+.fl-concept-profile .fl-v2-fighter-plans article{border-left:4px solid #ff304c;background-position:center,right 15%!important}
+.fl-concept-profile .fl-v2-history-row{border-bottom:1px solid #5c2938}
+/* Progression, Development, rank, achievements and charts */
+.route-page:has(.fl-progression),.route-page:has(.fl-development){background:radial-gradient(ellipse at 80% 0,#a3263a23,transparent 45%)}
+[class*="fl-prog"] [class*="tab"], [class*="fl-dev"] [class*="tab"]{transition:transform .2s,box-shadow .2s,border-color .2s}
+[class*="fl-prog"] [class*="tab"]:hover,[class*="fl-dev"] [class*="tab"]:hover{transform:translateY(-2px);box-shadow:0 0 16px #ff304c33}
+.fl-rank-badge img{filter:drop-shadow(0 0 12px #e82d4955)}
+[class*="progress"]>div,[class*="xp-bar"]>div{animation:fl-concept-progress .7s ease-out both;transform-origin:left}
+@keyframes fl-concept-progress{from{transform:scaleX(.04)}to{transform:scaleX(1)}}
+/* Unified interface effects */
+.btn-primary{position:relative;overflow:hidden;box-shadow:0 0 15px #ed2e4c33}.btn-primary:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#ffffff33 50%,transparent 75%);transform:translateX(-150%);transition:transform .45s;pointer-events:none}.btn-primary:hover:after{transform:translateX(150%)}
+button:focus-visible,a:focus-visible{outline:2px solid #ff6b81;outline-offset:3px}
+html{scrollbar-color:#a72c43 #111016;scrollbar-width:thin}
+@media(max-width:1000px){.fl-concept-hero-art{inset:0 -10% -15% 25%;opacity:.65}.fl-concept-module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fl-concept-hero-quote{display:none}}
+@media(max-width:640px){.fl-concept-home{padding:10px}.fl-concept-hero{min-height:530px}.fl-concept-hero-copy{padding:70px 25px}.fl-concept-hero h1{font-size:clamp(60px,15vw,90px)}.fl-concept-hero-art{inset:5% -45% 0 0;opacity:.28}.fl-concept-module-grid{gap:8px}.fl-concept-module{min-height:140px;padding:10px}.fl-concept-module strong{font-size:18px}.fl-concept-intel{flex-direction:column;align-items:flex-start;padding:20px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* FIGHTLAB BALANCED REVISION — charcoal/grey, restrained red */
+body{background:#101014}
+.app-shell{background:radial-gradient(ellipse at 70% 0%,rgba(100,36,43,.12),transparent 45%),#101014}
+.fl-concept-navbar{background:rgba(17,17,22,.94)!important;border-bottom:1px solid #38353f!important;box-shadow:0 8px 25px #0006}
+.fl-concept-navbar:before{opacity:.12}
+.fl-concept-home{background:transparent}
+.fl-concept-hero{
+ background:linear-gradient(90deg,rgba(14,13,18,.98) 0%,rgba(14,13,18,.92) 39%,rgba(14,13,18,.50) 73%,rgba(14,13,18,.72) 100%),url('/assets/images/hero.jpg') center 36%/cover no-repeat;
+ border:1px solid #3d3941;border-left:3px solid #ff3b45;
+ box-shadow:0 15px 40px #0008;
+}
+.fl-concept-hero:before{opacity:.23}
+.fl-concept-hero:after{background:linear-gradient(90deg,#0e0d12e8 0%,#0e0d12aa 37%,#0e0d1230 70%,#0e0d1280 100%)}
+.fl-concept-hero-art{
+ inset:0 4% -9% 46%;background-position:center 12%;background-size:contain;
+ filter:drop-shadow(0 12px 28px #0009) saturate(1.05);
+ animation:fl-fighter-enter .55s ease both;
+}
+@keyframes fl-fighter-enter{from{opacity:0;transform:translateX(14px) scale(.985)}to{opacity:1;transform:translateX(0) scale(1)}}
+.fl-concept-hero h1{font-style:normal;text-shadow:0 4px 28px #000c}
+.fl-concept-hero h1 span,.fl-concept-hero h1 em{color:#ff4c57}
+.fl-concept-hero-quote{bottom:25%;font-size:18px;color:#e9e5e9}
+.fl-concept-fighter-rotation{position:absolute;z-index:6;bottom:23px;right:5%;display:flex;align-items:center;gap:10px;background:#131217dc;border:1px solid #48424a;padding:8px 10px;backdrop-filter:blur(12px)}
+.fl-concept-fighter-rotation button{width:32px;height:34px;display:grid;place-items:center;background:#26242b;border:1px solid #55505b;color:#f4f1f5;cursor:pointer}
+.fl-concept-fighter-rotation button:hover{background:#54262d;border-color:#ff4b55}
+.fl-concept-featured-name{display:flex;flex-direction:column;gap:2px;min-width:110px;text-align:center}
+.fl-concept-featured-name small{font-size:8px;color:#aaa6af;letter-spacing:1.2px}
+.fl-concept-featured-name strong{font:900 22px 'Barlow Condensed',sans-serif}
+.fl-concept-featured-name span{font-size:9px;color:#b2abb6}
+.fl-concept-module{background:linear-gradient(145deg,#222128,#15151a);border:1px solid #393640;border-bottom:2px solid #7c343d;box-shadow:none}
+.fl-concept-module:hover{border-color:#bb4650;box-shadow:0 12px 30px #0008}
+.fl-concept-intel{background:linear-gradient(100deg,#1e1c23,#141419);border-left:3px solid #ff4b55}
+.fl-concept-fighters{background:linear-gradient(180deg,#2b242b40,transparent 320px)}
+.fl-concept-fighters .fighter-card{border-color:#3b3740}
+.fl-concept-profile .fl-profile-hero{background:linear-gradient(105deg,#19171d,#262029);border-color:#514049}
+.fl-concept-profile .fl-profile-stats>div,.fl-concept-profile .fl-v2-panel{background:linear-gradient(140deg,#242129,#17161c);border-color:#44404a}
+.fighter-detail-modal.fl-concept-detail{border-color:#6d3942;box-shadow:0 20px 60px #000b}
+.route-page:has(.fl-progression),.route-page:has(.fl-development){background:transparent}
+/* Unified content transitions for every Progression and Development subtab */
+.fl-progression .fl-prog-tabs ~ :is(.fl-prog-panel,.fl-prog-columns,.fl-prog-stats,.fl-prog-records,.fl-prog-compare,.fl-prog-form,.fl-prog-badges,.fl-prog-mastery,.fl-prog-track),
+.fl-advanced .fl-advanced-tabs ~ :is(.fl-advanced-grid,.fl-advanced-fields,.fl-advanced-metrics,.fl-advanced-row,.fl-skill-tree,.fl-matchup-grid){
+ animation:fl-tab-panel-enter .26s ease-out both;
+}
+@keyframes fl-tab-panel-enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+.fl-progression .fl-prog-tabs button,.fl-advanced .fl-advanced-tabs button{transition:transform .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+@media(max-width:1000px){.fl-concept-hero-art{inset:0 -6% -8% 34%;opacity:.75}}
+@media(max-width:640px){.fl-concept-hero-art{inset:4% -35% 0 8%;opacity:.30}.fl-concept-fighter-rotation{right:14px;bottom:12px}.fl-concept-hero-quote{display:none}}
+@media(prefers-reduced-motion:reduce){.fl-concept-hero-art,.fl-progression .fl-prog-tabs ~ *, .fl-advanced .fl-advanced-tabs ~ *{animation:none!important}}
+
+/* Homepage-only recovery: fully self-contained, not dependent on main.jsx imports */
+.fl-concept-home{width:min(1480px,calc(100% - 40px));margin:0 auto;padding:22px 0 36px}
+.fl-concept-hero{background-image:linear-gradient(90deg,#0e0d12ef 0%,#0e0d12b0 48%,#0e0d124d 100%),url('/assets/images/hero.jpg')!important;background-position:center,center;background-size:cover,cover}
+.fl-home-patch-controls{display:flex;gap:7px;margin-left:auto}
+.fl-home-patch-controls button{border:1px solid #5a4a52;background:#25232a;color:#eee;width:39px;height:38px;font-size:24px;cursor:pointer}
+.fl-home-patch-controls button:hover{border-color:#ed5361;background:#493039}
+@media(max-width:650px){.fl-concept-home{width:calc(100% - 20px)}.fl-home-patch-controls{margin-left:0}}

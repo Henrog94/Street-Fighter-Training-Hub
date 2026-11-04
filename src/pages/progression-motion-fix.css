@@ -1,0 +1,13 @@
+/* Match Development's vertical fade-in; override legacy horizontal slide rules. */
+.fl-progression .fl-prog-tab-stage {
+  animation: fl-progression-vertical-enter 340ms cubic-bezier(.2,.75,.2,1) both !important;
+  transform-origin: top center;
+  transition: none !important;
+}
+@keyframes fl-progression-vertical-enter {
+  from { opacity: 0; transform: translate3d(0,20px,0) scale(.992); filter: blur(3px); }
+  to   { opacity: 1; transform: translate3d(0,0,0) scale(1); filter: blur(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fl-progression .fl-prog-tab-stage { animation: none !important; transform: none !important; filter: none !important; }
+}

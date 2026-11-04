@@ -1,0 +1,54 @@
+/* FightLab login artwork — isolated to the login route. */
+.fl-auth-landing {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: max(75vh, 680px);
+  background: #0c0b10;
+}
+
+/* The supplied artwork remains intact; opacity is controlled by CSS. */
+.fl-auth-landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/images/fightlab-login-arena.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+/* Readability overlay: stronger around the form, without hiding the artwork. */
+.fl-auth-landing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgba(8, 8, 12, .77) 0%,
+    rgba(8, 8, 12, .48) 50%,
+    rgba(8, 8, 12, .65) 100%);
+  pointer-events: none;
+}
+
+.fl-auth-landing .fl-auth-card {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(145deg,
+    rgba(25, 23, 29, .90),
+    rgba(10, 10, 14, .92));
+  border: 1px solid rgba(239, 58, 76, .48);
+  border-top: 3px solid var(--red, #ff354c);
+  box-shadow: 0 24px 85px rgba(0,0,0,.68), 0 0 35px rgba(226,35,59,.12);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+@media (max-width: 640px) {
+  .fl-auth-landing { min-height: 75vh; padding: 36px 14px; }
+  .fl-auth-landing::before { background-position: center center; opacity: .28; }
+  .fl-auth-landing .fl-auth-card { padding: 22px; }
+}

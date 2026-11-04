@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,ref:'User',required:true,index:true},type:{type:String,enum:['combo','matchup','reaction','match','note','replay','video','rank','tournament','input'],required:true},fighter:{type:String,default:'',maxlength:80},opponent:{type:String,default:'',maxlength:80},title:{type:String,required:true,trim:true,maxlength:160},details:{type:String,default:'',maxlength:6000},url:{type:String,default:'',maxlength:1200},tags:{type:[String],default:[]},difficulty:{type:String,default:'medium'},status:{type:String,enum:['planned','practicing','mastered'],default:'planned'},score:{type:Number,default:0},duration:{type:Number,default:0},result:{type:String,enum:['','win','loss'],default:''},isPublic:{type:Boolean,default:false}}, {timestamps:true});
+schema.index({user:1,type:1,createdAt:-1});
+export default mongoose.model('ProgressRecord',schema);

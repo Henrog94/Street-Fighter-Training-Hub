@@ -1,0 +1,88 @@
+/* FIGHTLAB // COMBAT HUD VISUAL SYSTEM — global, additive, no data changes */
+:root { --fl-fx-red:#ff394e; --fl-fx-border:#69303b; --fl-fx-glass:rgba(20,19,25,.83); }
+html { scrollbar-color:#ad293e #141317; scrollbar-width:thin; }
+::-webkit-scrollbar { width:9px; height:8px; }
+::-webkit-scrollbar-track { background:#141317; }
+::-webkit-scrollbar-thumb { background:#9e2a3d; border:2px solid #141317; border-radius:9px; }
+::selection { background:#c62a43; color:#fff; }
+:focus-visible { outline:2px solid #ff6a7d !important; outline-offset:3px; }
+/* Subtle grid/ember atmosphere, pointer-events never intercept controls */
+.app-shell { position:relative; isolation:isolate; }
+.app-shell::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:-1; background-image:radial-gradient(circle at 16% 22%,rgba(255,64,78,.14) 0 1px,transparent 2px),radial-gradient(circle at 78% 68%,rgba(255,64,78,.10) 0 1px,transparent 2px),linear-gradient(110deg,transparent 45%,rgba(255,50,70,.025) 50%,transparent 55%); background-size:310px 310px,410px 410px,100% 100%; animation:fl-embers 36s linear infinite; }
+@keyframes fl-embers {to { background-position:60px -320px,-90px -250px,0 0; }}
+/* HUD frames, used selectively for high-value panels */
+.fl-profile-hero,.fl-prog-hero,.fl-advanced-hero,.training-aside,.fl-prog-panel,.fl-profile-v2 .fl-profile-stats > div { position:relative; }
+.fl-profile-hero::after,.fl-prog-hero::after,.fl-advanced-hero::after,.training-aside::after { content:""; position:absolute; inset:8px; pointer-events:none; border:1px solid rgba(255,68,88,.14); clip-path:polygon(0 0, 32px 0,32px 2px,2px 2px,2px 32px,0 32px,0 0,100% 0,100% 32px,calc(100% - 2px) 32px,calc(100% - 2px) 2px,calc(100% - 32px) 2px,calc(100% - 32px) 0,100% 0,100% 100%,calc(100% - 32px) 100%,calc(100% - 32px) calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) calc(100% - 32px),100% calc(100% - 32px),100% 100%,0 100%,0 calc(100% - 32px),2px calc(100% - 32px),2px calc(100% - 2px),32px calc(100% - 2px),32px 100%,0 100%); }
+.fl-prog-panel,.fl-advanced article,.fl-profile-stats > div { border-color:rgba(255,65,85,.19); background-color:var(--fl-fx-glass); backdrop-filter:blur(7px); }
+.fl-prog-panel:hover,.fl-advanced article:hover,.fl-profile-stats > div:hover { border-color:rgba(255,65,85,.43); }
+/* Fighter selection: layered art + impact reveal */
+.fighter-card { position:relative; overflow:hidden; transition:transform .23s ease, box-shadow .23s ease, border-color .23s ease; }
+.fighter-card:hover,.fighter-card:focus-visible { transform:translateY(-5px); box-shadow:0 14px 35px rgba(255,35,62,.15),0 0 0 1px rgba(255,65,85,.45); }
+.fighter-card .fighter-image-wrap img { transition:transform .45s cubic-bezier(.2,.75,.2,1),filter .35s; }
+.fighter-card:hover .fighter-image-wrap img { transform:scale(1.075); filter:contrast(1.08) saturate(1.12); }
+.fighter-card::after { content:""; position:absolute; top:0; bottom:0; width:55%; left:-85%; background:linear-gradient(90deg,transparent,rgba(255,95,110,.17),transparent); transform:skewX(-23deg); pointer-events:none; }
+.fighter-card:hover::after { animation:fl-swipe .55s ease-out both; }
+@keyframes fl-swipe {to {left:160%;}}
+/* Angular buttons with a restrained hit-swipe */
+.btn-primary,.nav-cta,.fl-prog-tabs button,.fl-advanced-tabs button,.fl-nav-user { position:relative; overflow:hidden; }
+.btn-primary::after,.nav-cta::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.22) 48%,transparent 62%); transform:translateX(-140%); }
+.btn-primary:hover::after,.nav-cta:hover::after { animation:fl-button-swipe .45s ease-out; }
+@keyframes fl-button-swipe {to {transform:translateX(140%);}}
+.btn-primary:active,.nav-cta:active { transform:translateY(1px) scale(.99); }
+/* Navigation and tool-tab indicators */
+.nav-item { position:relative; }
+.nav-item::after { content:""; position:absolute; height:2px; bottom:1px; left:50%; right:50%; background:var(--fl-fx-red); transition:left .2s,right .2s; }
+.nav-item:hover::after,.nav-item.active::after { left:10px; right:10px; }
+.fl-prog-tabs button,.fl-advanced-tabs button { transition:transform .18s,border-color .18s,box-shadow .18s; }
+.fl-prog-tabs button:hover,.fl-advanced-tabs button:hover { transform:translateY(-3px); border-color:#f34a5f; box-shadow:0 8px 20px rgba(220,40,65,.14); }
+.fl-prog-tabs button.active,.fl-advanced-tabs button.active { box-shadow:inset 0 -3px #ff4256,0 0 20px rgba(255,57,78,.16); }
+/* Mastery, XP, progress stats */
+.fl-prog-track { overflow:hidden; }
+.fl-prog-track > i { display:block; transform-origin:left; animation:fl-xp-fill .8s ease-out both; box-shadow:0 0 10px rgba(255,65,85,.38); }
+@keyframes fl-xp-fill {from {transform:scaleX(0);}to {transform:scaleX(1);}}
+.fl-prog-badges .unlocked { position:relative; border-color:#b77c3a; background:linear-gradient(140deg,rgba(135,74,20,.22),rgba(34,24,23,.85)); }
+.fl-prog-badges .unlocked svg { filter:drop-shadow(0 0 8px rgba(255,186,74,.45)); }
+.fl-prog-badges .unlocked:hover { box-shadow:0 0 22px rgba(255,173,53,.2); transform:translateY(-3px); }
+.fl-prog-badges .locked { filter:grayscale(.65); opacity:.65; }
+/* Page transition + scrolling reveal */
+.route-page,.fl-profile-v2,.fl-progression,.fl-advanced { animation:fl-page-arrive .36s ease-out both; }
+@keyframes fl-page-arrive {from {opacity:.25;transform:translateY(10px);}to {opacity:1;transform:translateY(0);}}
+.fl-fx-reveal { opacity:0; transform:translateY(18px); transition:opacity .48s ease,transform .48s ease; }
+.fl-fx-reveal.fl-fx-visible { opacity:1; transform:translateY(0); }
+.fl-fx-route-indicator { position:fixed; z-index:60; top:0; left:0; height:3px; background:linear-gradient(90deg,#ff3c51,#ff9d75,#ff3c51); box-shadow:0 0 16px #ff3c51; animation:fl-route-sweep .45s ease-out both; pointer-events:none; }
+@keyframes fl-route-sweep {0% {width:0;opacity:1;}75% {width:100%;opacity:1;}100% {width:100%;opacity:0;}}
+/* Actual data-loading display (no artificial delay) */
+.fl-fx-loading { max-width:580px; margin:36px auto; padding:30px; background:linear-gradient(135deg,#17161d,#26141a); border:1px solid #64313b; border-left:4px solid #ff3b4e; display:grid; gap:12px; font-size:11px; font-weight:900; letter-spacing:2px; color:#bfb8c0; }
+.fl-fx-loading-mark { font:900 38px 'Barlow Condensed',sans-serif; color:#fff; letter-spacing:1px; }
+.fl-fx-loading-mark span {color:#ff3b4e;}
+.fl-fx-loading-bar {height:5px; background:linear-gradient(90deg,#ff3b4e,#fa8b68,#ff3b4e); background-size:200% 100%; animation:fl-load 1.3s linear infinite;}
+@keyframes fl-load {to {background-position:-200% 0;}}
+/* Settings and real event-based toast notifications */
+.fl-fx-controls {position:fixed;bottom:22px;left:20px;z-index:80;}
+.fl-fx-settings-toggle {width:42px;height:42px;border-radius:50%;display:grid;place-items:center;cursor:pointer;border:1px solid #85404b;color:#ff7586;background:rgba(19,17,23,.87);box-shadow:0 5px 20px #0007;backdrop-filter:blur(12px);}
+.fl-fx-settings {position:absolute;bottom:52px;left:0;width:242px;padding:15px;display:grid;gap:9px;background:#19171c;border:1px solid #78343e;box-shadow:0 12px 38px #0009;}
+.fl-fx-settings strong {font-size:11px;letter-spacing:1.4px;color:#ff7586;}
+.fl-fx-settings button {display:flex;align-items:center;gap:10px;text-align:left;padding:10px;background:#282127;border:1px solid #58343c;color:#f7f3f4;cursor:pointer;font-size:11px;font-weight:800;}
+.fl-fx-settings small {color:#a9a0a5;font-size:10px;line-height:1.5;}
+.fl-fx-toast {position:fixed;right:24px;bottom:25px;z-index:90;display:flex;align-items:center;gap:15px;width:min(370px,calc(100vw - 48px));padding:18px 16px;background:linear-gradient(120deg,#251c22,#15151b);border:1px solid #b55b39;border-left:4px solid #ffc16d;box-shadow:0 12px 42px #000b,0 0 25px #ffb85d22;animation:fl-toast-in .32s ease-out;color:#ffc16d;}
+.fl-fx-toast div {display:grid;gap:5px;flex:1;}.fl-fx-toast strong {font-size:11px;letter-spacing:1px;}.fl-fx-toast span {font-size:13px;color:#f2e8e8;}.fl-fx-toast button {border:0;background:transparent;color:#ccc;cursor:pointer;}
+@keyframes fl-toast-in {from {opacity:0;transform:translateX(25px);}to {opacity:1;transform:translateX(0);}}
+/* Tooltips for existing titled controls */
+button[title],a[title] { cursor:pointer; }
+/* Accessible reduced motion: OS and in-app switch */
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after {animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;} .fl-fx-reveal{opacity:1!important;transform:none!important;} }
+.fl-reduced-fx *, .fl-reduced-fx *::before,.fl-reduced-fx *::after {animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}
+.fl-reduced-fx .fl-fx-reveal {opacity:1!important;transform:none!important;}
+@media(max-width:650px) {.fl-fx-controls{left:12px;bottom:12px}.fl-fx-toast{right:12px;bottom:70px}.fl-prog-hero,.fl-advanced-hero{padding:25px 20px}.fl-fx-loading{margin:18px 12px}.fl-prog-tabs button,.fl-advanced-tabs button{min-height:48px}}
+/* Matchup VS presentation reuses existing comparison values, no new data assumptions */
+.fl-prog-compare { position:relative; display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;isolation:isolate; }
+.fl-prog-compare::before { content:'VS'; position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);font:900 clamp(30px,5vw,62px) 'Barlow Condensed',sans-serif;color:#ff4058;text-shadow:0 0 20px #ff405888,3px 3px #111;z-index:2;pointer-events:none; }
+.fl-prog-compare > div {min-width:0;border:1px solid #723340;background:linear-gradient(135deg,rgba(60,19,29,.6),rgba(16,15,20,.96));padding:20px;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));}
+.fl-prog-compare > div:nth-child(2) {background:linear-gradient(225deg,rgba(60,19,29,.6),rgba(16,15,20,.96));}
+/* Page-specific hero treatment reuses a bundled image, keeping text readable */
+.fl-prog-hero,.fl-advanced-hero { background-image:linear-gradient(100deg,rgba(17,15,20,.97) 0%,rgba(23,14,20,.91) 55%,rgba(80,20,31,.48) 100%),url('/assets/images/hero.jpg');background-size:cover;background-position:center 35%; }
+.fl-profile-hero { backdrop-filter:blur(4px); }
+/* Actual loading placeholders and built-in browser title hints stay readable */
+.fl-fx-skeleton {background:linear-gradient(90deg,#27232a 0%,#40303a 50%,#27232a 100%);background-size:200% 100%;animation:fl-load 1.6s linear infinite;border-radius:3px;min-height:16px;}
+.fl-prog-tabs button:focus-visible,.fl-advanced-tabs button:focus-visible {outline:2px solid #ffb2bb;outline-offset:3px;}
+@media(max-width:700px){.fl-prog-compare{grid-template-columns:1fr}.fl-prog-compare::before{top:50%;font-size:34px}}

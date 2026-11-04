@@ -1,0 +1,23 @@
+
+/* FightLab six-point refinement: charcoal first, red accents */
+.fl-patch-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.fl-patch-cycle{display:flex;align-items:center;gap:12px;background:#19191eeb;border:1px solid #4c424a;padding:5px 7px;color:#c8c4ca}
+.fl-patch-cycle button{border:1px solid #51434b;background:#2b252d;color:#fff;width:38px;height:36px;cursor:pointer;font-size:24px;line-height:1}
+.fl-patch-cycle button:hover,.fl-patch-cycle button:focus-visible{border-color:#f34b5d;background:#5c2b35}
+.fl-patch-cycle span{font-size:11px;font-weight:800;letter-spacing:.14em;min-width:48px;text-align:center}
+.fl-prog-tab-stage,.fl-dev-tab-stage{animation:fl-unified-tab-enter .32s cubic-bezier(.2,.8,.2,1) both;transform-origin:top center}
+@keyframes fl-unified-tab-enter{from{opacity:0;transform:translate3d(0,18px,0);filter:blur(3px)}to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}}
+.fl-progression .fl-prog-tabs button,.fl-advanced .fl-advanced-tabs button{transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}
+.fl-progression .fl-prog-tabs button:hover,.fl-advanced .fl-advanced-tabs button:hover{transform:translateY(-2px)}
+/* Profile: layered command-center visual without overpowering red */
+.fl-profile-v2{--fl-profile-red:#ed4b59}
+.fl-profile-v2 .fl-profile-hero{position:relative;overflow:hidden;background:linear-gradient(105deg,#18171dcf,#29232bd9),radial-gradient(circle at 85% 25%,#ad36433a,transparent 45%)!important;border:1px solid #49414a;border-left:4px solid #ed4b59;box-shadow:0 15px 38px #0006}
+.fl-profile-v2 .fl-profile-hero:after{content:"";position:absolute;right:-65px;top:-125px;width:420px;height:420px;border:1px solid #a64a5840;border-radius:50%;box-shadow:0 0 0 38px #a64a5809,0 0 0 82px #a64a5808;pointer-events:none}
+.fl-profile-v2 .fl-v2-panel{background:linear-gradient(145deg,#232127ed,#16151be8);border:1px solid #443f49;box-shadow:0 12px 28px #0004;transition:transform .22s,border-color .22s}
+.fl-profile-v2 .fl-v2-panel:hover{border-color:#75505b}
+.fl-profile-v2 .fl-v2-stat{background:linear-gradient(135deg,#29262d,#19171e)}
+.fl-profile-v2 .fl-v2-fighter-plans article{transition:transform .22s,border-color .22s,box-shadow .22s}
+.fl-profile-v2 .fl-v2-fighter-plans article:hover{transform:translateY(-3px);border-color:#b64c59;box-shadow:0 14px 28px #0006}
+.fl-profile-v2 .fl-v2-kicker{letter-spacing:.18em;color:#ed6a76}
+@media(max-width:700px){.fl-patch-actions{width:100%;justify-content:space-between}.fl-prog-tab-stage,.fl-dev-tab-stage{animation-duration:.22s}}
+@media(prefers-reduced-motion:reduce){.fl-prog-tab-stage,.fl-dev-tab-stage{animation:none!important}.fl-profile-v2 *{transition:none!important}}
