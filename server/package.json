@@ -9,7 +9,8 @@
     "seed": "node scripts/seedFighters.js",
     "inspect": "node scripts/inspectApi.js",
     "import:local": "node scripts/importFightLab.js",
-    "import:all": "npm run seed && npm run import:local"
+    "import:all": "npm run seed && npm run import:local",
+    "test": "node --test tests/*.test.js"
   },
   "keywords": [],
   "author": "",

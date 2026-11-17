@@ -1,0 +1,108 @@
+/* FightLab mobile layout refinements. Desktop appearance is unchanged. */
+@media (max-width: 700px) {
+  html, body, #root { max-width: 100%; }
+  .fl-concept-home, .fl-training-page, .fl-training-workspace, .fl-sessions-section { min-width: 0; max-width: 100%; }
+  .fl-concept-hero { min-width: 0; min-height: 0; overflow: hidden; }
+  .fl-concept-hero-copy { width: 100%; max-width: 100%; padding: 50px 22px 34px; box-sizing: border-box; }
+  .fl-concept-kicker { font-size: 10px; letter-spacing: .12em; line-height: 1.5; flex-wrap: wrap; }
+  .fl-concept-hero h1 { font-size: clamp(48px, 12.5vw, 76px); line-height: .92; overflow-wrap: anywhere; max-width: 100%; }
+  .fl-concept-hero-copy > p { font-size: 14px; line-height: 1.65; max-width: 34ch; }
+  .fl-concept-hero-art { inset: 10% -60% 0 8%; opacity: .24; pointer-events: none; }
+  .fl-concept-hero-counter { flex-wrap: wrap; gap: 8px 14px; }
+  .fl-training-page .page-heading, .fl-training-page .page-heading > * { min-width: 0; max-width: 100%; }
+  .fl-training-page .page-heading h1 { font-size: clamp(42px, 10.5vw, 66px); line-height: .96; overflow-wrap: break-word; }
+  .fl-training-page .page-heading p { max-width: 100%; line-height: 1.65; }
+  .fl-training-overview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .fl-training-overview > div { min-width: 0; padding: 14px 11px; gap: 8px; }
+  .fl-training-overview > div strong { font-size: clamp(27px, 7vw, 39px); }
+  .fl-training-overview > div span { font-size: 10px; overflow-wrap: anywhere; }
+  .fl-training-workspace { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .fl-training-side, .fl-session-form, .fl-sessions-section, .fl-session-item { min-width: 0; width: 100%; box-sizing: border-box; }
+  .fl-training-side, .fl-session-form { padding: 18px 14px; }
+  .fl-month-head { gap: 8px; }
+  .fl-month-head h3 { font-size: clamp(21px, 6.5vw, 32px); text-align: center; min-width: 0; }
+  .fl-month-head button { flex-shrink: 0; }
+  .fl-month-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+  .fl-month-grid button, .fl-month-grid > span:not(.fl-weekday) { min-width: 0; width: 100%; padding-left: 0; padding-right: 0; }
+  .fl-month-grid .fl-weekday { font-size: 9px; }
+  .fl-field-row, .fl-field-three { grid-template-columns: minmax(0, 1fr); }
+  .fl-session-form label, .fl-session-form input, .fl-session-form select, .fl-session-form textarea { min-width: 0; max-width: 100%; box-sizing: border-box; }
+  .fl-sessions-title { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .fl-sessions-title h2 { font-size: clamp(29px, 8vw, 44px); line-height: 1.02; overflow-wrap: anywhere; }
+  .fl-session-item { padding: 20px 15px; }
+  .fl-session-item-main, .fl-session-item h3, .fl-session-item p { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+  .fl-session-item h3 { font-size: clamp(25px, 7vw, 37px); line-height: 1.05; }
+  .fl-session-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; width: 100%; max-width: none; }
+  .fl-session-controls button { min-width: 0; width: 100%; justify-content: center; padding: 12px 7px; white-space: normal; }
+}
+@media (max-width: 390px) {
+  .fl-training-overview { grid-template-columns: minmax(0, 1fr); }
+  .fl-concept-hero-copy { padding-left: 17px; padding-right: 17px; }
+  .fl-training-side, .fl-session-form { padding-left: 11px; padding-right: 11px; }
+  .fl-month-grid { gap: 3px; }
+}
+
+/* Mobile music controls: keep the collapsed launcher unobtrusive and
+   expand the controls above it rather than over the calendar footer. */
+@media (max-width: 700px) {
+  .music-widget {
+    position: fixed;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: auto;
+    width: 42px;
+    height: 42px;
+    gap: 0;
+    z-index: 9999;
+  }
+  .music-widget-toggle {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    flex: 0 0 42px;
+    position: relative;
+    z-index: 2;
+  }
+  .music-widget-panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: min(244px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 5px 7px;
+    padding: 10px 12px;
+    border-radius: 16px;
+    background: rgba(20, 20, 25, .94);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .55);
+  }
+  .music-widget-panel .music-control {
+    width: 36px;
+    height: 36px;
+    min-width: 0;
+    padding: 0;
+  }
+  .music-widget-panel .music-track-name { display: none; }
+  .music-widget-panel .music-volume {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-width: 0;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+  .music-widget-panel .music-volume input {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 150px;
+    width: auto;
+  }
+  .music-widget-panel .music-volume span { min-width: 30px; }
+}

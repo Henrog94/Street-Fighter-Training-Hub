@@ -13,6 +13,7 @@ import { Swords, Flame, Search, Menu, X, ArrowUpRight, Crosshair, Zap, BookOpen,
 import "./styles.css";
 import "./fightlab-ui.css";
 import "./fightlab-refinement.css";
+import "./fightlab-mobile-capstone.css";
 import {AuthProvider} from "./context/AuthContext";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
