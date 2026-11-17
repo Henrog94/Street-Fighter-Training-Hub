@@ -37,8 +37,6 @@ From `server/`, run `npm test`. On November 17, 2026, the recorded local run com
 
 The Figma prototype includes seven connected desktop screens and training planner interaction states. Navigation was manually confirmed working. The Figma link may require access permission; screenshots are provided in the repository. The final project report and presentation are submitted separately.
 
-## Security and source material
-Never commit `.env`, tokens, user uploads, or `node_modules`. Verify rights to redistribute artwork, game music, and other third-party content before publishing a public repository or deploying.
 
 ## Repository
 https://github.com/Henrog94/Street-Fighter-Training-Hub
